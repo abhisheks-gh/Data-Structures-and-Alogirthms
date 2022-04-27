@@ -1,1 +1,1 @@
-# DSA-Practise
+# DSA-Bootcamp
