@@ -2,24 +2,36 @@
 package com.assignments.first_java;
 
 import java.util.Scanner;
-import java.lang.String;
+import java.util.List;
+import java.util.ArrayList;
 
 public class PalindromeCheck {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String userInput = sc.next();
-        sc.close();
-        boolean flag = false;
-        for (int i = 0; i < userInput.length()/2; i++) {
-            for (int j = userInput.length()/2; j >= 0; j--) {
-                if (userInput.charAt(i) == userInput.charAt(j)) {
-                    flag = true;
-                } else {
-                    flag = false;
-                }
+        System.out.print("Enter a string: ");
+        String input = sc.next();
+        List<Character> rev = new ArrayList<>();
+        int count = 0;
+        boolean flag = true;
+
+        for (int i = input.length()-1; i >= 0; i--) {
+            rev.add(count, input.charAt(i));
+            count++;
+        }
+//        if (rev.toString().equals(input))
+//            System.out.println("Yes, it is a palindrome");
+//        else
+//            System.out.println("No, it is not a palindrome");
+
+        // Comparing character wise
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) != rev.get(i)) {
+                flag = false;
             }
         }
-        if (flag==true) System.out.println("True");
-        else System.out.println(false);
+        if (flag)
+            System.out.println("Palindrome");
+        else System.out.println("Not a Palindrome");
+        sc.close();
     }
 }
