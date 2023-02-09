@@ -13,7 +13,8 @@ public class FibonacciNthNumber {
         int n = sc.nextInt();
         int num1 = 0;
         int num2 = 1;
-        list.add(0,num1); list.add(1, num2);
+        list.add(0,num1);
+        list.add(1, num2);
         for (int i = 2; i <= n; i++) {
             int sum = list.get(i-2) + list.get(i-1);
             list.add(i, sum);
