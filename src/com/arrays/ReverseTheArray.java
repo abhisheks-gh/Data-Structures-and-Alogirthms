@@ -15,6 +15,7 @@ public class ReverseTheArray {
         arr[index2] = temp;
     }
 
+    // Using two pointer method
     static void reverseTheArray(int[] arr) {
         int start = 0;
         int end = arr.length-1;
