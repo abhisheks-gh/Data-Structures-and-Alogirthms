@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
-
 /** Alternative approach: Convert each number to String type and
     check the length of the String */
 
@@ -24,9 +23,15 @@ public class FindNumbersWithEvenNumberOfDigits {
 
     // Checks whether a number contains even digits or not
     static boolean isEvenDigitNumber(int num) {
-        int numberOfDigits = digitsInNumber(num);
+        // int numberOfDigits = digitsInNumber(num);
+        int numberOfDigits = optimizedDigitsInNumbers(num);
 
         return numberOfDigits % 2 == 0;
+    }
+
+    /** Optimized version of digitsInNumber(int) method */
+    static int optimizedDigitsInNumbers(int num) {
+        return (int)(Math.log10(num)) + 1;
     }
 
     // Counts number of digits in a number
