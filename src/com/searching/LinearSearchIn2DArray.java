@@ -2,7 +2,7 @@ package com.searching;
 
 import java.util.Scanner;
 
-public class SearchIn2DArray {
+public class LinearSearchIn2DArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -16,12 +16,12 @@ public class SearchIn2DArray {
         System.out.print("Enter the element you want to search: ");
         int target = sc.nextInt();
 
-        System.out.println( searchIn2DArray(arr, target));
+        System.out.println( linearSearchIn2DArray(arr, target));
 
         sc.close();
     }
 
-    static String searchIn2DArray(int[][] arr, int target) {
+    static String linearSearchIn2DArray(int[][] arr, int target) {
         for (int row = 0; row < arr.length; row++) {
             for (int col = 0; col < arr[row].length; col++) {
                 if (arr[row][col] == target) {
