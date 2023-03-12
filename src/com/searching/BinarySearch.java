@@ -13,6 +13,8 @@
  - O(1) – constant complexity – takes the same amount of space regardless of the input size.
  */
 
+// Binary Search for arrays sorted in ascending order
+
 package com.searching;
 
 public class BinarySearch {
