@@ -23,7 +23,6 @@ public class CeilingOfANumber {
     }
 
     static int ceiling(int[] arr, int target) {
-
         // if target is greater than the greatest number in the array
         if (target > arr[arr.length - 1]) {
             return -1;
