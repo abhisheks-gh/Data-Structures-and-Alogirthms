@@ -12,7 +12,7 @@ public class CeilingOfANumber {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr = {  2, 3, 5, 9, 14, 16, 18};
+        int[] arr = {2, 3, 5, 9, 14, 16, 18};
 
         System.out.print("Enter the number you want to search: ");
         int target = sc.nextInt();
