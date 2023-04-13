@@ -9,7 +9,7 @@
  * }
  */
  
-class Solution {
+class FindInMountainArray {
     public int findInMountainArray(int target, MountainArray mountainArr) {
         int peak = peakIndexInMountainArray(mountainArr);
         int firstTry = orderAgnosticBinarySearch(mountainArr, target, 0, peak);
