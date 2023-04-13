@@ -1,35 +1,34 @@
 // https://leetcode.com/problems/find-in-mountain-array/
 
-package com.dsa.searching.binarySearch.interviewQuestions;
-
-public class FindInMountainArray {
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 3, 1};
-        int target = 3;
-        FindInMountainArray obj = new FindInMountainArray();
-        System.out.println( obj.search(arr, target) );
-    }
-
-    int search(int[] arr, int target) {
-        int peak = peakIndexInMountainArray(arr);
-        int firstTry = binarySearch(arr, target, 0, peak);
+/**
+ * // This is MountainArray's API interface.
+ * // You should not implement it, or speculate about its implementation
+ * interface MountainArray {
+ *     public int get(int index) {}
+ *     public int length() {}
+ * }
+ */
+ 
+class Solution {
+    public int findInMountainArray(int target, MountainArray mountainArr) {
+        int peak = peakIndexInMountainArray(mountainArr);
+        int firstTry = orderAgnosticBinarySearch(mountainArr, target, 0, peak);
         if (firstTry != -1) {
             return firstTry;
         }
 
         // try to search in the second half of the array
-        return orderAgnosticBinarySearch(arr, target, peak + 1, arr.length - 1);
+        return orderAgnosticBinarySearch(mountainArr, target, peak + 1, mountainArr.length() - 1);
     }
 
-    public int peakIndexInMountainArray(int[] arr) {
+    static int peakIndexInMountainArray(MountainArray mountainArr) {
         int start = 0;
-        int end = arr.length - 1;
+        int end = mountainArr.length() - 1;
 
         while (start < end) {
             int mid = start + (end - start) / 2;
 
-            if (arr[mid] > arr[mid + 1]) {
+            if (mountainArr.get(mid) > mountainArr.get(mid + 1)) {
                 // We are in descending part of the array
                 // this may be the ans, but look in the left
                 // this is why end != mid - 1
@@ -53,40 +52,24 @@ public class FindInMountainArray {
         return start;   // or return end (as both are equal)
     }
 
-    static int binarySearch(int[] arr, int target, int start, int end) {
+    static int orderAgnosticBinarySearch(MountainArray mountainArr, int target, int start, int end) {
+        boolean isAscending = mountainArr.get(start) < mountainArr.get(end);
+
         while (start <= end) {
             int mid = start + (end - start) / 2;
 
-            if (target < arr[mid]) {
-                end = mid - 1;
-            } else if (target > arr[mid]) {
-                start = mid + 1;
-            } else {
+            if (target == mountainArr.get(mid))
                 return mid;
-            }
-        }
-
-        return -1;
-    }
-
-    static int orderAgnosticBinarySearch(int[] arr, int target, int start, int end) {
-        boolean isAscending = arr[start] < arr[end];
-
-        while (start <= end) {
-            int mid = start + (end - start / 2);
-
-            if (target == arr[mid])
-                return target;
 
             if (isAscending) {
-                if (target < arr[mid])
+                if (target < mountainArr.get(mid))
                     end = mid - 1;
-                else if (target > arr[mid])
+                else
                     start = mid + 1;
             } else {
-                if (target < arr[mid])
+                if (target < mountainArr.get(mid))
                     start = mid + 1;
-                else if (target > arr[mid])
+                else
                     end = mid - 1;
             }
         }
