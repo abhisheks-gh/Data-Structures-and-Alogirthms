@@ -1,8 +1,7 @@
 /**
  * Time Complexity:
- - Best case complexity / Lower bound (denoted by omega) = Ω(1)
- - Average case complexity (denoted by theta) = Θ(n)                   // n = size of array
- - Worst case complexity / Upper bound (denoted by Big-oh) = O(n)      // n = size of array
+ - Worst case complexity / Upper bound (denoted by Big-oh) = O(n * m)      // n = size of array
+ // m = size of sub-array in each iteration
 
  * Space Complexity:
  - O(1) – constant complexity – takes the same amount of space regardless of the input size.
@@ -16,13 +15,13 @@ import java.util.Arrays;
 public class LinearSearchIn2DArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int[][] arr = {
                 {23, 4, 1},
                 {18, 12, 3, 9},
                 {78, 99, 34, 56},
                 {18, 12}
         };
+
 
         System.out.print("Enter the element you want to search: ");
         int target = sc.nextInt();
