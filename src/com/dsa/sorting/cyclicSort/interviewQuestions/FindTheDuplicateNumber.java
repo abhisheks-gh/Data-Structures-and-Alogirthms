@@ -20,7 +20,8 @@ public class FindTheDuplicateNumber {
             // EXTRA CHECKS
             // if not at correct index, check if correct index
             // already contains the same value.
-            // If it does, duplicate found
+            // If it does -> duplicate found,
+            // otherwise -> swap
             if (nums[i] != i + 1) {
                 int correctIndex = nums[i] - 1;
                 if (nums[i] != nums[correctIndex]) {
