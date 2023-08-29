@@ -27,12 +27,12 @@ public class SetMismatch {
 
         // In the sorted array, search for the duplicate i.e.
         // the value which is not at its correct index, index = value - 1
-        for (i = 0; i < nums.length; i++) {
-            if (nums[i] != i + 1) {
+        for (int index = 0; index < nums.length; index++) {
+            if (nums[index] != index + 1) {
                 // Duplicate found
                 // nums[i] will be the duplicate & expected/correct value
                 // i.e. i + 1 will be the missing number.
-                return new int[]{nums[i], i+1};
+                return new int[] {nums[index], index + 1};
             }
         }
 
