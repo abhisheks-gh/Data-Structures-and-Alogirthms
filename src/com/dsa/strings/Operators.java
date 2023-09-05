@@ -9,7 +9,7 @@ public class Operators {
     public static void main(String[] args) {
         System.out.println('a' + 'b');  // 195 (addition of ASCII values of 'a' & 'b', i.e. 97 & 98)
         System.out.println("a" + "b");  // "ab" (strings are concatenated)
-        System.out.println('a' + 3);    // 100 (addition of ASCII values of 'a' & 3)
+        System.out.println('a' + 3);    // 100 (addition of ASCII value of 'a' & 3)
         System.out.println((char)('a' + 3));    // char value of prev. result
 
         System.out.println("a" + 1);    // String concatenation, valueOf(1).toString();
