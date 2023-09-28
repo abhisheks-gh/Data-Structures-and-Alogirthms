@@ -1,2 +1,2 @@
 # Data-Structures-and-Algorithms
-  Covers problem solving,  Data Structures & Algorithms in Java 
+  Covers Data structures, Algorithms, Problem solving, Object Oriented Programming in Java.
