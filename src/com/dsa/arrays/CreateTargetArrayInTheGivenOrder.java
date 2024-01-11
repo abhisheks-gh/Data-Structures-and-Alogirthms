@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/create-target-array-in-the-given-order/
 
-package com.assignments.arrays;
+package com.dsa.arrays;
 
 import java.util.Arrays;
 import java.util.ArrayList;
