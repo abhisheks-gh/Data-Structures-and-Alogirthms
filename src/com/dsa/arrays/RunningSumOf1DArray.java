@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/running-sum-of-1d-array/
 
-package com.assignments.arrays;
+package com.dsa.arrays;
 
 import java.util.Arrays;
 
